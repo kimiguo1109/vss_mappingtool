@@ -1,0 +1,20 @@
+#
+# (C) 2023 Robert Bosch GmbH
+# (C) 2023 GEELY Cars
+#
+
+Vehicle.Chassis.SteeringWheel.Angle:
+  datatype: int16
+  type: sensor
+  dbc:
+    signal: dbc_name
+    interval_ms: 100
+    transform:
+      math: "floor(x+0.5)"
+
+Vehicle.Speed:
+    type: sensor
+    datatype: float
+    dbc:
+        signal: dbc_name
+        interval_ms: 100

@@ -1,0 +1,82 @@
+{
+  "Vehicle.Speed": {
+    "type": "sensor",
+    "datatype": "float",
+    "dbc": {
+      "signal": "dbc_name",
+      "interval_ms": 100
+    }
+  },
+  "Vehicle.Body.Mirrors.Left.Tilt": {
+    "datatype": "int8",
+    "type": "actuator",
+    "dbc": {
+      "signal": "dbc_name",
+      "interval_ms": 100,
+      "transform": null,
+      "math": "floor((x*40)-100)"
+    }
+  },
+  "Vehicle.Body.Mirrors.Left.Pan": {
+    "datatype": "int8",
+    "type": "actuator",
+    "dbc": {
+      "signal": "dbc_name",
+      "interval_ms": 100,
+      "transform": null,
+      "math": "floor((x*40)-100)"
+    }
+  },
+  "Vehicle.Body.Mirrors.Right.Tilt": {
+    "datatype": "int8",
+    "type": "actuator",
+    "dbc": {
+      "signal": "dbc_name",
+      "interval_ms": 100,
+      "transform": null,
+      "math": "floor((x*40)-100)"
+    }
+  },
+  "Vehicle.Body.Mirrors.Right.Pan": {
+    "datatype": "int8",
+    "type": "actuator",
+    "dbc": {
+      "signal": "dbc_name",
+      "interval_ms": 100,
+      "transform": null,
+      "math": "floor((x*40)-100)"
+    }
+  },
+  "Vehicle.Chassis.SteeringWheel.Angle": {
+    "datatype": "int16",
+    "type": "sensor",
+    "dbc": {
+      "signal": "dbc_name",
+      "interval_ms": 100,
+      "transform": null,
+      "math": "floor(x+0.5)"
+    }
+  },
+  "Vehicle.OBD.AmbientAirTemperature": {
+    "type": "sensor",
+    "datatype": "float",
+    "dbc": {
+      "interval_ms": 1000,
+      "signal": "dbc_name"
+    }
+  },
+  "Vehicle.Cabin.Seat.Row1.Position": {
+    "datatype": "uint16",
+    "type": "actuator",
+    "min": 0,
+    "unit": "mm",
+    "description": "Seat position on vehicle x-axis. Position is relative to the frontmost position supported by the seat. 0 = Frontmost position supported."
+  },
+  "Vehicle.Cabin.Seat.Row1.Height": {
+    "datatype": "uint16",
+    "type": "actuator",
+    "min": 0,
+    "unit": "mm",
+    "description": "Seat position on vehicle z-axis. Position is relative within available movable range of the seating. 0 = Lowermost position supported."
+  }
+}

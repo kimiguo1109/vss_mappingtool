@@ -1,0 +1,95 @@
+{
+  "Vehicle.Cabin.Seat.Row1.Height": {
+    "datatype": "uint16",
+    "type": "actuator",
+    "min": 0,
+    "unit": "mm",
+    "description": "Seat position on vehicle z-axis. Position is relative within available movable range of the seating. 0 = Lowermost position supported.",
+    "dbc": {
+      "signal": "EtasVCSeat_row1ZPosition",
+      "interval_ms": 100
+    }
+  },
+  "Vehicle.Cabin.Seat.Row1.Position": {
+    "datatype": "uint16",
+    "type": "actuator",
+    "min": 0,
+    "unit": "mm",
+    "description": "Seat position on vehicle x-axis. Position is relative to the frontmost position supported by the seat. 0 = Frontmost position supported.",
+    "dbc": {
+      "signal": "EtasVCSeat_row1XPosition",
+      "interval_ms": 100
+    }
+  },
+  "Vehicle.Body.Mirrors.Right.Pan": {
+    "datatype": "int8",
+    "type": "actuator",
+    "dbc": {
+      "signal": "EtasVCRIGHT_mirrorTiltYPosition",
+      "interval_ms": 100,
+      "transform": {
+        "math": "floor((x*40)-100)"
+      }
+    }
+  },
+  "Vehicle.Body.Mirrors.Right.Tilt": {
+    "datatype": "int8",
+    "type": "actuator",
+    "dbc": {
+      "signal": "EtasVCRIGHT_mirrorTiltXPosition",
+      "interval_ms": 100,
+      "transform": {
+        "math": "floor((x*40)-100)"
+      }
+    }
+  },
+  "Vehicle.Body.Mirrors.Left.Tilt": {
+    "datatype": "int8",
+    "type": "actuator",
+    "dbc": {
+      "signal": "EtasVCLEFT_mirrorTiltXPosition",
+      "interval_ms": 100,
+      "transform": {
+        "math": "floor((x*40)-100)"
+      }
+    }
+  },
+  "Vehicle.Body.Mirrors.Left.Pan": {
+    "datatype": "int8",
+    "type": "actuator",
+    "dbc": {
+      "signal": "EtasVCLEFT_mirrorTiltYPosition",
+      "interval_ms": 100,
+      "transform": {
+        "math": "floor((x*40)-100)"
+      }
+    }
+  },
+  "Vehicle.OBD.AmbientAirTemperature": {
+    "datatype": "float",
+    "type": "sensor",
+    "dbc": {
+      "signal": "EtasVCFRONT_tempAmbientFiltered",
+      "interval_ms": 1000
+    }
+  },
+  "Vehicle.Chassis.SteeringWheel.Angle": {
+    "datatype": "int16",
+    "type": "sensor",
+    "dbc": {
+      "signal": "EtasSteeringAngle129",
+      "interval_ms": 100,
+      "transform": {
+        "math": "floor(x+0.5)"
+      }
+    }
+  },
+  "Vehicle.Speed": {
+    "datatype": "float",
+    "type": "sensor",
+    "dbc": {
+      "signal": "EtasVehicleSpeed",
+      "interval_ms": 100
+    }
+  }
+}
